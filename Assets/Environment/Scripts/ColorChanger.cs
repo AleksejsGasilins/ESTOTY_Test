@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ColorChanger : MonoBehaviour
 {
-    private SpriteRenderer _spriteRenderer;
+    [SerializeField]public SpriteRenderer _spriteRenderer;
 
     public Color color1;
     public Color color2;
