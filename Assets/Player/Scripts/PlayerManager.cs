@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    private bool MoveByTouch;
+    private bool _moveByTouch;
     private Vector3 Direction;
     public List<Rigidbody>  Rblst = new List<Rigidbody>();
     [SerializeField] private float runSpeed, velocity, swipeSpeed, roadSpeed;
@@ -22,15 +22,15 @@ public class PlayerManager : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0))
         {
-            MoveByTouch = true;
+            _moveByTouch = true;
         }
         
         if (Input.GetMouseButtonUp(0))
         {
-            MoveByTouch = false;
+            _moveByTouch = false;
         }
         
-        if (MoveByTouch)
+        if (_moveByTouch)
         { 
             
            Direction.x = Mathf.Lerp(Direction.x,Input.GetAxis("Mouse X"), Time.deltaTime * runSpeed);
@@ -42,11 +42,10 @@ public class PlayerManager : MonoBehaviour
             foreach (var stickman_Anim in Rblst)
                 stickman_Anim.GetComponent<Animator>().SetFloat("run",1f);
         }
-        
         else
         {
             foreach (var stickman_Anim in Rblst)
-                stickman_Anim.GetComponent<Animator>().SetFloat("run",0f);
+                stickman_Anim.GetComponent<Animator>().SetFloat("run", 0f);
         }
 
         foreach (var stickman_rb in Rblst)
@@ -66,7 +65,7 @@ public class PlayerManager : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (MoveByTouch)
+        if (_moveByTouch)
         {
             Vector3 displacement = new Vector3(Direction.x,0f,0f) * Time.fixedDeltaTime;
             

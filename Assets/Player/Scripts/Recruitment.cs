@@ -21,5 +21,9 @@ public class Recruitment : MonoBehaviour
             other.collider.transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().material =
                 PlayerManager.PlayerManagerCls.Rblst.ElementAt(0).transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().material;
         }
+        else
+        {
+            other.transform.parent = null;
+        }
     }
 }
