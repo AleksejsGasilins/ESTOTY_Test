@@ -11,11 +11,11 @@ public class MovingBridge : MonoBehaviour
     
     void Update()
     {
-        if (transform.position.x > 2f)
+        if (transform.position.x > 1f)
         {
             _moveingRight = false;
         }
-        else if (transform.position.x < -2f)
+        else if (transform.position.x < -1f)
         {
             _moveingRight = true;
         }

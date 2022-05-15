@@ -17,10 +17,4 @@ public class MenuManager : MonoBehaviour
 
         hand.transform.DOMoveX(0.23f, 0.5f).SetLoops(1000, LoopType.Yoyo).SetEase(motionType);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
